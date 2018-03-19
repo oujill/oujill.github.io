@@ -1,9 +1,62 @@
-<html>
+<!DOCTYPE html><html>
 	<head>
 		<title>oujill's web</title>
-	</head> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding:0px;
+		}
+		#sidebar{
+			position:fixed;
+			width: 100px;
+			height: 100%;
+			background: #151719;
+			left:0px;
+			transition: all 500ms linear;
+		}
+		#sidebar.active{
+			width: 200px;
+			left: 0px;
+		}
+		#sidebar ul li{
+			color: white;
+			list-style: none;
+			padding: 15px 10px;
+			border-bottom: 1px solid rgba(100,100,100,0.3);
+		}
+		#sidebar .toggle-btn{
+
+			left:230px;
+			top:20px;
+		}
+		#sidebar .toggle-btn span{
+			display: block;
+			width: 30px;
+			height: 5px;
+			background: #151719;
+			margin:5px 0px;
+		}
+	</style>  
+	<script type="text/javascript">
+		function toggleSidebar(){
+			document.getElementById("sidebar").classList.toggle('active');
+		}
+	</script>
 
 	<body style="background-color:#b36d63">
+		<div class="row">
+	    	<div class="col-md-3">
+				<div id="sidebar">
+					<ul style="color: white;">
+						<li><a href="#" class="toggle-btn" onclick="toggleSidebar()"><i class="glyphicon glyphicon-chevron-right" style="color: white;float: right;"></i></a></li>
+						<li><a href="#one">Home</a></li>
+						<li><a href="#two">Food</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
 
 					<br><h2 style="color: white">Hi ! I'm Jill OU.<br> This is my first web to show my own picture.<br>
 					<hr color="#111111" size="7" width="50%" align="center"></hr>
@@ -34,5 +87,7 @@
 				<img src="C:\Users\jillj\Desktop\S_7645627331244.jpg" width="600">
 				<img src="C:\Users\jillj\Desktop\S_7645627464712.jpg" width="600">
 				<img src="C:\Users\jillj\Desktop\S_7645627286297.jpg" width="600">
+			</div>
+		</div>
 	</body>
 </html>
