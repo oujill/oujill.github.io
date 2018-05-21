@@ -38,6 +38,11 @@
 			background: #151719;
 			margin:5px 0px;
 		}
+		#map {
+			height: 400px;
+			width: 100%;
+		}
+
 	</style>  
 	<script type="text/javascript">
 		function toggleSidebar(){
@@ -47,50 +52,7 @@
 
 	<body style="background-color:#b36d63">
 		
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '654452414886886',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'facebook-jssdk'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'v2.12'));
-	
-FB.getLoginStatus(function(response) {
-   // statusChangeCallback(response);
-	    console.log(response)
-
-});
-				
-{
-    status: 'connected',
-    authResponse: {
-        accessToken: '...',
-        expiresIn:'...',
-        signedRequest:'...',
-        userID:'...'
-    }
-}
-	
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-</script>
-		<div class="row">
+ 		<div class="row">
 	    	<div class="col-md-3">
 				<div id="sidebar">
 					<ul style="color: white;">
@@ -100,12 +62,24 @@ function checkLoginState() {
 					</ul>
 				</div>
 			</div>
+	    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTt6EEJHebF7q5FxDVlCoJ3rKH0c5WWq0&callback=initMap">
+    </script>
 			<div class="col-md-9">
-				
-<fb:login-button 
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
 					<br><h2 style="color: white">Hi ! I'm Jill OU.<br> This is my first web to show my own picture.<br>
 					<hr color="#111111" size="7" width="50%" align="center"></hr>
 						姓名:歐育綺<br><br>
