@@ -48,6 +48,17 @@
 		function toggleSidebar(){
 			document.getElementById("sidebar").classList.toggle('active');
 		}
+		function initMap() {
+  var uluru = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
 	</script>
 
 	<body style="background-color:#b36d63">
@@ -63,23 +74,12 @@
 				</div>
 			</div>
 	    <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
+
+			<div class="col-md-9">   
+				
+				<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTt6EEJHebF7q5FxDVlCoJ3rKH0c5WWq0&callback=initMap">
     </script>
-			<div class="col-md-9">
 					<br><h2 style="color: white">Hi ! I'm Jill OU.<br> This is my first web to show my own picture.<br>
 					<hr color="#111111" size="7" width="50%" align="center"></hr>
 						姓名:歐育綺<br><br>
